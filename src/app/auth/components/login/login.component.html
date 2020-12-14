@@ -1,0 +1,19 @@
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput>
+        <mat-error *ngIf="errorsUsername">
+          <app-show-error inputName="User name" [errors]="errorsUsername"></app-show-error>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput>
+        <mat-error *ngIf="errorsPassword">
+          <app-show-error inputName="Password" [errors]="errorsPassword"></app-show-error>
+        </mat-error>
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" type="submit">Sign in</button>
+</form>
